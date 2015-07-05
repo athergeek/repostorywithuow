@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FixMyCarModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="FixMyCarEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="FixMyCarModel.Customer" />
+    <EntitySet Name="Repairs" EntityType="FixMyCarModel.Repair" />
+    <EntitySet Name="RepairDetails" EntityType="FixMyCarModel.RepairDetail" />
+    <EntitySet Name="RepairDetailLineItems" EntityType="FixMyCarModel.RepairDetailLineItem" />
+    <EntitySet Name="Vehicles" EntityType="FixMyCarModel.Vehicle" />
+    <AssociationSet Name="FK_RepairDetailLineItem_RepairDetail" Association="FixMyCarModel.FK_RepairDetailLineItem_RepairDetail">
+      <End Role="RepairDetail" EntitySet="RepairDetails" />
+      <End Role="RepairDetailLineItem" EntitySet="RepairDetailLineItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicle_Customer" Association="FixMyCarModel.FK_Vehicle_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Vehicle" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Repair_Vehicle" Association="FixMyCarModel.FK_Repair_Vehicle">
+      <End Role="Vehicle" EntitySet="Vehicles" />
+      <End Role="Repair" EntitySet="Repairs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RepairDetail_Repair" Association="FixMyCarModel.FK_RepairDetail_Repair">
+      <End Role="Repair" EntitySet="Repairs" />
+      <End Role="RepairDetail" EntitySet="RepairDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ContactNumber" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Vehicles" Relationship="FixMyCarModel.FK_Vehicle_Customer" FromRole="Customer" ToRole="Vehicle" />
+  </EntityType>
+  <EntityType Name="Repair">
+    <Key>
+      <PropertyRef Name="RepairId" />
+    </Key>
+    <Property Name="RepairId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RepairDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Description" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="VehicleId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Vehicle" Relationship="FixMyCarModel.FK_Repair_Vehicle" FromRole="Repair" ToRole="Vehicle" />
+    <NavigationProperty Name="RepairDetails" Relationship="FixMyCarModel.FK_RepairDetail_Repair" FromRole="Repair" ToRole="RepairDetail" />
+  </EntityType>
+  <EntityType Name="RepairDetail">
+    <Key>
+      <PropertyRef Name="RepairDetailId" />
+    </Key>
+    <Property Name="RepairDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="RepairId" Type="Int32" Nullable="false" />
+    <Property Name="PaymentMethod" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="RepairDetailLineItems" Relationship="FixMyCarModel.FK_RepairDetailLineItem_RepairDetail" FromRole="RepairDetail" ToRole="RepairDetailLineItem" />
+    <NavigationProperty Name="Repair" Relationship="FixMyCarModel.FK_RepairDetail_Repair" FromRole="RepairDetail" ToRole="Repair" />
+  </EntityType>
+  <EntityType Name="RepairDetailLineItem">
+    <Key>
+      <PropertyRef Name="LineItemId" />
+    </Key>
+    <Property Name="LineItemId" Type="Int32" Nullable="false" />
+    <Property Name="Qty" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="RepairDetailId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="RepairDetail" Relationship="FixMyCarModel.FK_RepairDetailLineItem_RepairDetail" FromRole="RepairDetailLineItem" ToRole="RepairDetail" />
+  </EntityType>
+  <EntityType Name="Vehicle">
+    <Key>
+      <PropertyRef Name="VehicleId" />
+    </Key>
+    <Property Name="VehicleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VIN" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Year" Type="Int32" Nullable="false" />
+    <Property Name="Make" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Model" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="FixMyCarModel.FK_Vehicle_Customer" FromRole="Vehicle" ToRole="Customer" />
+    <NavigationProperty Name="Repairs" Relationship="FixMyCarModel.FK_Repair_Vehicle" FromRole="Vehicle" ToRole="Repair" />
+  </EntityType>
+  <Association Name="FK_RepairDetailLineItem_RepairDetail">
+    <End Role="RepairDetail" Type="FixMyCarModel.RepairDetail" Multiplicity="1" />
+    <End Role="RepairDetailLineItem" Type="FixMyCarModel.RepairDetailLineItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RepairDetail">
+        <PropertyRef Name="RepairDetailId" />
+      </Principal>
+      <Dependent Role="RepairDetailLineItem">
+        <PropertyRef Name="RepairDetailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicle_Customer">
+    <End Type="FixMyCarModel.Customer" Role="Customer" Multiplicity="1" />
+    <End Type="FixMyCarModel.Vehicle" Role="Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Repair_Vehicle">
+    <End Type="FixMyCarModel.Vehicle" Role="Vehicle" Multiplicity="1" />
+    <End Type="FixMyCarModel.Repair" Role="Repair" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="VehicleId" />
+      </Principal>
+      <Dependent Role="Repair">
+        <PropertyRef Name="VehicleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RepairDetail_Repair">
+    <End Type="FixMyCarModel.Repair" Role="Repair" Multiplicity="1" />
+    <End Type="FixMyCarModel.RepairDetail" Role="RepairDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Repair">
+        <PropertyRef Name="RepairId" />
+      </Principal>
+      <Dependent Role="RepairDetail">
+        <PropertyRef Name="RepairId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

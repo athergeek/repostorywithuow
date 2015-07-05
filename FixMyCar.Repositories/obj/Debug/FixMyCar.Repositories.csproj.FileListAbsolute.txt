@@ -1,0 +1,14 @@
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories\bin\Debug\FixMyCar.Repositories.dll.config
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories\bin\Debug\FixMyCar.Repositories.dll
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories\bin\Debug\FixMyCar.Repositories.pdb
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories\bin\Debug\EntityFramework.dll
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories\bin\Debug\FixMyCar.Entities.dll
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories\bin\Debug\FixMyCar.Repositories.Interfaces.dll
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories\bin\Debug\FixMyCar.Entities.pdb
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories\bin\Debug\FixMyCar.Repositories.Interfaces.pdb
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories\bin\Debug\EntityFramework.xml
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories\bin\Debug\EntityFramework.SqlServer.xml
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories\obj\Debug\FixMyCar.Repositories.csprojResolveAssemblyReference.cache
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories\obj\Debug\FixMyCar.Repositories.dll
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories\obj\Debug\FixMyCar.Repositories.pdb

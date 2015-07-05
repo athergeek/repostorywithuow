@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8334a661e1dd4ea7993483f655f8e684" Name="Diagram1">
+        <EntityTypeShape EntityType="FixMyCarModel.Customer" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FixMyCarModel.Repair" Width="1.5" PointX="5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FixMyCarModel.RepairDetail" Width="1.5" PointX="7.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FixMyCarModel.RepairDetailLineItem" Width="1.5" PointX="9.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FixMyCarModel.Vehicle" Width="1.5" PointX="2.875" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="FixMyCarModel.FK_RepairDetailLineItem_RepairDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="FixMyCarModel.FK_Vehicle_Customer" />
+        <AssociationConnector Association="FixMyCarModel.FK_Repair_Vehicle" />
+        <AssociationConnector Association="FixMyCarModel.FK_RepairDetail_Repair" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

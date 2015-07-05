@@ -1,0 +1,4 @@
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.BusinessLayer.Interfaces\bin\Debug\FixMyCar.BusinessLayer.Interfaces.dll
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.BusinessLayer.Interfaces\bin\Debug\FixMyCar.BusinessLayer.Interfaces.pdb
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.BusinessLayer.Interfaces\obj\Debug\FixMyCar.BusinessLayer.Interfaces.dll
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.BusinessLayer.Interfaces\obj\Debug\FixMyCar.BusinessLayer.Interfaces.pdb

@@ -1,0 +1,9 @@
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories.Interfaces\bin\Debug\FixMyCar.Repositories.Interfaces.dll.config
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories.Interfaces\bin\Debug\FixMyCar.Repositories.Interfaces.dll
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories.Interfaces\bin\Debug\FixMyCar.Repositories.Interfaces.pdb
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories.Interfaces\bin\Debug\EntityFramework.dll
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories.Interfaces\bin\Debug\EntityFramework.SqlServer.dll
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories.Interfaces\bin\Debug\EntityFramework.xml
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories.Interfaces\bin\Debug\EntityFramework.SqlServer.xml
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories.Interfaces\obj\Debug\FixMyCar.Repositories.Interfaces.dll
+C:\ather\Downloads\Projects\FixMyCar.DB-First\FixMyCar\FixMyCar.Repositories.Interfaces\obj\Debug\FixMyCar.Repositories.Interfaces.pdb
